@@ -19,7 +19,8 @@
         $.ajax({
             type: "POST",
             url: "mailer/smart.php",
-            data: $(this).serialize()
+            data: $(this).serialize(),
+            headers: { "Permissions-Policy": "interest-cohort=()" }
         }).done(function () {
             $(this).find("input").val("");
             showFormComplete();
